@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="B103Maven_Junit" />
+        <module name="Maven_Junit" />
       </profile>
     </annotationProcessing>
   </component>

@@ -13,5 +13,8 @@ public class C03_ClassWork {
         //7- sonuc sayisinin 10 milyon’dan fazla oldugunu test edin
         //8- Sayfayi kapatin
 
+
+
+
     }
 }
