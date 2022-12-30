@@ -3,8 +3,6 @@ package day07;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import utilities.TestBase;
 
 public class C04_PromptAlert extends TestBase {
@@ -30,6 +28,7 @@ public class C04_PromptAlert extends TestBase {
         String actualResult = driver.findElement(By.xpath("//*[@id='result']")).getText();//"You entered: Ebrar"
         String expectedResult = "Ebrar";
         Assert.assertTrue(actualResult.contains(expectedResult));
+
     }
 }
 
