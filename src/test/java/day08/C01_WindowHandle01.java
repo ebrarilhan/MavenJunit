@@ -12,7 +12,7 @@ public class C01_WindowHandle01 extends TestBase {
 
     @Test
     public void handleWindowTest() throws InterruptedException {
-
+        
         //https://the-internet.herokuapp.com/windows adresine gidin.
         driver.get("https://the-internet.herokuapp.com/windows");
 
