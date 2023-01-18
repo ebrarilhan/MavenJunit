@@ -32,31 +32,32 @@ public class C04_StaleElementReferenceException extends TestBase {
 
 
     @Test
-    public void staleElementReferenceExceptionTest1(){
+    public void staleElementReferenceExceptionTest1() {
         driver.get("https://www.techproeducation.com");
-        waitFor(5);
-//        LMS LOGIN linkine tikla ve o sayfanin URL inin lms icerdigini test et
+
+        //LMS LOGIN linkine tiklayin
         WebElement lmsLoginLink = driver.findElement(By.linkText("LMS LOGIN"));
-        waitFor(5);
-        lmsLoginLink.click();//LMS e git
-        Assert.assertTrue(driver.getCurrentUrl().contains("lms"));//URl in lms kelimesini icerdigini test et
-        waitFor(5);
-//        Tekrar ana sayfaya gel ve LMS LOGIN sayfasina tekrar
-        driver.navigate().back();//tekrar ana sayfaya gittik
-        waitFor(5);
-        lmsLoginLink.click();//LMS e git. org.openqa.selenium.StaleElementReferenceException:
-        /*
-        lmsLoginLink linkini sayfa yenilendikden(back()) sonra kullandigim icin StaleElementReferenceException aldim
-         */
+        lmsLoginLink.click();
+
+        //Sayfanin URL'inin "lms" icerdigini test edin
+        Assert.assertTrue(driver.getCurrentUrl().contains("lms"));
+
+        //Tekrar anasayfaya gelin ve "LMS LOGIN" sayfasina tekrar gidin.
+        driver.navigate().back();
+        lmsLoginLink.click();//org.openqa.selenium.StaleElementReferenceException:
+
+        //lsmLoginLink linkini sayfa yenilendikten sonra kullandigimiz icin exception aldik
     }
     @Test
-    public void staleElementReferenceExceptionTest2(){
+    public void staleElementReferenceExceptionTest2() {
         driver.get("https://www.techproeducation.com");
-        waitFor(5);
+
         WebElement lmsLoginLink = driver.findElement(By.linkText("LMS LOGIN"));
-        waitFor(5);
+
+        lmsLoginLink.click();
+
         driver.navigate().refresh();
-        waitFor(5);
-        lmsLoginLink.click();// SAYFA YENILENMEDEN ONCE BULDUGUM ELEMENTI, SAYFA YENILENDIKDEN SONRA KULLANMAK ISTEDIM
+
+        lmsLoginLink.click();
     }
 }
